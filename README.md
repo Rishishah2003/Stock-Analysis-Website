@@ -1,0 +1,2 @@
+# Stock-Analysis-Website
+We have made this website to showcase stocks on the National Stock Exchange and to give people good knowledge about the stocks in which they are investing. We have also added a riskometer where the person can get the risk of each stock using our personal algorithm, where we have used our stock fundamentals to get the risk of investing in the stock. In this, we have showcased different charts for understanding the stocks. You can dynamically select the stocks.
