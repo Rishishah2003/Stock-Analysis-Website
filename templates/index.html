@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Dashboard - Brand</title>
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+    <link rel="stylesheet" href="static/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="static/css/Footer-Clean-icons.css">
+    <link rel="stylesheet" href="static/css/Team-Horizontal-images.css">
+    <style>
+        .a{
+            color: blue;
+            padding: 6px;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+        .a:hover{
+            text-decoration: underline;
+            color: green;
+
+        }
+    </style>
+</head>
+
+<body id="page-top">
+    <div id="wrapper">
+        <nav class="navbar align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0 navbar-dark" style="background: var(--bs-navbar-brand-hover-color);">
+            <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                    <div class="sidebar-brand-icon rotate-n-15"></div>
+                    <div class="sidebar-brand-text mx-3"><span style="color: rgba(1,1,1,1);" href="untitled-1.html">Stock EQ </span></div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                <ul class="navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item"><a class="nav-link active" href="index.html"><i class="fas fa-tachometer-alt" style="color: rgba(1,1,1,1);"></i><span style="color: rgba(1,1,1,1);">Dashboard</span></a></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html"><i class="far fa-user-circle" style="color: rgba(1,1,1,1);"></i><span style="color: rgba(1,1,1,1);">Login</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="register.html"><i class="fas fa-user-circle" style="color: rgba(1,1,1,1);"></i><span style="color: rgba(1,1,1,1);">Register</span></a></li>
+                </ul>
+                <div class="text-center d-none d-md-inline" style="color: rgba(1,1,1,1);"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button" style="color: rgba(1,1,1,1);background: radial-gradient(black 61%, white);"></button></div>
+            </div>
+        </nav>
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <nav class="navbar navbar-expand bg-white shadow mb-4 topbar static-top navbar-light">
+                    <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                        <div class="input-group" style="margin-left: 350px;">
+                            <input class="bg-light form-control border-0 small" type="text" placeholder="Search for ..." name="stock_name">
+                            <button class="btn btn-primary py-0" type="submit"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                </nav>
+                <div class="container-fluid">
+                    <div class="d-sm-flex justify-content-between align-items-center mb-4"></div>
+                    <div class="row" style="margin-right: -54px;padding-right: 0px;padding-left: 0px;margin-left: 68px;">
+                        <div class="col-md-6 col-xl-3 mb-4" style="margin-left: 359px;">
+                            <div class="card shadow border-start-success py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col me-2">
+                                            <div class="text-uppercase text-success fw-bold text-xs mb-1"><span>{{stock_name|safe}}</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span>{{stock_last_quote|safe}}</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-7 col-xl-8" style="padding-left: 12px;margin-left: 211px;">
+                            <div class="card shadow mb-4">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h6 class="text-primary fw-bold m-0">Health Analysis</h6>
+                                    <div class="dropdown no-arrow"><button class="btn btn-link btn-sm dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button"><i class="fas fa-ellipsis-v text-gray-400"></i></button>
+                                        <div class="dropdown-menu shadow dropdown-menu-end animated--fade-in">
+                                            <p class="text-center dropdown-header">dropdown header:</p><a class="dropdown-item" href="#">&nbsp;Action</a><a class="dropdown-item" href="#">&nbsp;Another action</a>
+                                            <div class="dropdown-divider"></div><a class="dropdown-item" href="#">&nbsp;Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-area">{{stock_health|safe}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-xl-8" style="padding-left: 12px;margin-left: 211px;">
+                            <div class="card shadow mb-4">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h6 class="text-primary fw-bold m-0">Price Chart</h6>
+                                    <div class="dropdown no-arrow"><button class="btn btn-link btn-sm dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button"><i class="fas fa-ellipsis-v text-gray-400"></i></button>
+                                        <div class="dropdown-menu shadow dropdown-menu-end animated--fade-in">
+                                            <p class="text-center dropdown-header">dropdown header:</p><a class="dropdown-item" href="#">&nbsp;Action</a><a class="dropdown-item" href="#">&nbsp;Another action</a>
+                                            <div class="dropdown-divider"></div><a class="dropdown-item" href="#">&nbsp;Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <form method="post">
+                                        {% csrf_token %}
+                                        <label class = >Select Time Period:</label>
+                                        <input type="submit" name="period" value="1mo" class = "a">
+                                        <input type="submit" name="period" value="1y" class = "a">
+                                        <input type="submit" name="period" value="5y" class = "a">
+                                        <input type="submit" name="period" value="max" class = "a">
+                                    </form>
+                                    <div class="chart-area">
+                                        <script>
+                                            {{stock_hist_1mo_w_volume|safe}}
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-xl-8" style="padding-left: 12px;margin-left: 211px;">
+                                <div class="card shadow mb-4">
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                        <h6 class="text-primary fw-bold m-0">Price Chart</h6>
+                                        <div class="dropdown no-arrow"><button class="btn btn-link btn-sm dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button"><i class="fas fa-ellipsis-v text-gray-400"></i></button>
+                                            <div class="dropdown-menu shadow dropdown-menu-end animated--fade-in">
+                                                <p class="text-center dropdown-header">dropdown header:</p><a class="dropdown-item" href="#">&nbsp;Action</a><a class="dropdown-item" href="#">&nbsp;Another action</a>
+                                                <div class="dropdown-divider"></div><a class="dropdown-item" href="#">&nbsp;Something else here</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="col me-2">
+                                            <div class="text-uppercase text-primary fw-bold text-xs mb-1"><span>Return on Assets (ROA)</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span>{{roa|safe}}</span></div>
+                                        </div>
+                                        <div class="col me-2">
+                                            <div class="text-uppercase text-primary fw-bold text-xs mb-1"><span><span style="color: rgb(10, 252, 5);">Current Ratio</span></span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span>{{current_ratio|safe}}</span></div>
+                                        </div>
+                                        <div class="col me-2">
+                                            <div class="text-uppercase text-primary fw-bold text-xs mb-1"><span><span style="color: rgb(235, 226, 8);">Asset turnover</span></span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span>{{asset_turnover}}</span></div>
+                                        </div>
+                                        <div class="col me-2">
+                                            <div class="text-uppercase text-primary fw-bold text-xs mb-1"><span><span style="color: rgb(251, 15, 0);">RETURN on Equity</span></span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span>{{roe}}</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-4" style="margin-left: 329px;padding-left: 0px;padding-right: 0px;">
+                            <div class="card text-white bg-primary shadow"></div>
+                        </div>
+                        <div class="col-lg-7 col-xl-8" style="padding-left: 12px;margin-left: 211px;">
+                            <div class="card shadow mb-4">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h6 class="text-primary fw-bold m-0">Sales Over Years</h6>
+                                    <div class="dropdown no-arrow"><button class="btn btn-link btn-sm dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button"><i class="fas fa-ellipsis-v text-gray-400"></i></button>
+                                        <div class="dropdown-menu shadow dropdown-menu-end animated--fade-in">
+                                            <p class="text-center dropdown-header">dropdown header:</p><a class="dropdown-item" href="#">&nbsp;Action</a><a class="dropdown-item" href="#">&nbsp;Another action</a>
+                                            <div class="dropdown-divider"></div><a class="dropdown-item" href="#">&nbsp;Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-area">{{yoy_sales_plot|safe}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-xl-8" style="padding-left: 12px;margin-left: 211px;">
+                            <div class="card shadow mb-4">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h6 class="text-primary fw-bold m-0">Profit Over Years</h6>
+                                    <div class="dropdown no-arrow"><button class="btn btn-link btn-sm dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button"><i class="fas fa-ellipsis-v text-gray-400"></i></button>
+                                        <div class="dropdown-menu shadow dropdown-menu-end animated--fade-in">
+                                            <p class="text-center dropdown-header">dropdown header:</p><a class="dropdown-item" href="#">&nbsp;Action</a><a class="dropdown-item" href="#">&nbsp;Another action</a>
+                                            <div class="dropdown-divider"></div><a class="dropdown-item" href="#">&nbsp;Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-area">{{yoy_profit_plot|safe}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-xl-8" style="padding-left: 12px;margin-left: 211px;">
+                            <div class="card shadow mb-4">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h6 class="text-primary fw-bold m-0">Borrowings</h6>
+                                    <div class="dropdown no-arrow"><button class="btn btn-link btn-sm dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button"><i class="fas fa-ellipsis-v text-gray-400"></i></button>
+                                        <div class="dropdown-menu shadow dropdown-menu-end animated--fade-in">
+                                            <p class="text-center dropdown-header">dropdown header:</p><a class="dropdown-item" href="#">&nbsp;Action</a><a class="dropdown-item" href="#">&nbsp;Another action</a>
+                                            <div class="dropdown-divider"></div><a class="dropdown-item" href="#">&nbsp;Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-area">{{plot_borrowings|safe}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-4" style="margin-left: 329px;">
+                            <div class="card text-white bg-primary shadow"></div>
+                        </div>
+                        <div class="col-lg-7 col-xl-8" style="padding-left: 12px;margin-left: 211px;">
+                            <div class="card shadow mb-4">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h6 class="text-primary fw-bold m-0">Promoter holding</h6>
+                                    <div class="dropdown no-arrow"><button class="btn btn-link btn-sm dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button"><i class="fas fa-ellipsis-v text-gray-400"></i></button>
+                                        <div class="dropdown-menu shadow dropdown-menu-end animated--fade-in">
+                                            <p class="text-center dropdown-header">dropdown header:</p><a class="dropdown-item" href="#">&nbsp;Action</a><a class="dropdown-item" href="#">&nbsp;Another action</a>
+                                            <div class="dropdown-divider"></div><a class="dropdown-item" href="#">&nbsp;Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-area">{{plot_promoter|safe}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    </div>
+    <footer class="bg-white sticky-footer">
+        <div class="container my-auto">
+            <div class="text-center my-auto copyright"><span>Copyright © Stock IQ 2023</span></div>
+        </div>
+    </footer>
+    <script src="static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="static/js/chart.min.js"></script>
+    <script src="static/js/bs-init.js"></script>
+    <script src="static/js/theme.js"></script>
+</body>
+
+</html>

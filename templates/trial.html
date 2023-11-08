@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Analysis</title>
+</head>
+<body>
+    <h1>Stock Analysis</h1>
+    <form method="post" action="{% url 'index1' %}">
+        {% csrf_token %}
+        <label for="stock_symbol">Enter Stock Symbol (e.g., TCS, AAPL):</label>
+        <input type="text" id="stock_symbol" name="stock_symbol" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if stock_name %}
+        <h2>Stock Information:</h2>
+        <p>Stock Name: {{ stock_name }}</p>
+        <p>Last Quote: {{ stock_last_quote }}</p>
+
+        {% if stock_metrics %}
+            <h2>Financial Metrics:</h2>
+            <p>ROA: {{ stock_metrics.roa }}</p>
+            <p>Current Ratio: {{ stock_metrics.current_ratio }}</p>
+            <!-- Add more metrics here as needed -->
+
+            {% if stock_health_score %}
+                <h2>Riskometer:</h2>
+                <p>Stock Health Score: {{ stock_health_score }}</p>
+                <div id="riskometer">
+                    {{ riskometer|safe }}
+                </div>
+            {% endif %}
+        {% else %}
+            <p>Financial metrics not available for the specified stock.</p>
+        {% endif %}
+    {% else %}
+        {% if request.method == 'POST' %}
+            <p>Invalid stock symbol. Please try again.</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
